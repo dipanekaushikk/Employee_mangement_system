@@ -34,10 +34,12 @@ A web-based **Employee Management System** built using **Spring Boot**, **JPA**,
 
 - Java 11 or higher
 - Maven
-- A relational database (e.g., MySQL, PostgreSQL)![Screenshot 2024-11-20 164454](https://github.com/user-attachments/assets/07889c01-6c68-47ff-a607-5d37e4707ac9)
-![Screenshot 2024-11-20 164443](https://github.com/user-attachments/assets/eade0f4a-429e-468e-9fcf-efe1d58751a6)
-![Screenshot 2024-11-20 164429](https://github.com/user-attachments/assets/4366c7be-d515-4faa-8189-e6a678cf939a)
-![Screenshot 2024-11-20 164402](https://github.com/user-attachments/assets/95be8561-d676-44c4-a125-9a774fc26afa)
-![Screenshot 2024-11-20 163456](https://github.com/user-attachments/assets/0dda2f95-24a8-4d72-b5a9-80395582b3c8)
-![Screenshot 2024-11-20 163420](https://github.com/user-attachments/assets/3d25fc3e-cee0-41f3-94a5-3250a7cf8269)
+- A relational database (e.g., MySQL, PostgreSQL)
+## Some Insights of the Application
+![Screenshot 2024-11-20 164454](https://github.com/user-attachments/assets/10cf8474-2ea3-4a54-81ca-257d618b8b55)
+![Screenshot 2024-11-20 164443](https://github.com/user-attachments/assets/2f6556a5-c074-4a60-b278-39451bebefad)
+![Screenshot 2024-11-20 164429](https://github.com/user-attachments/assets/d27c3953-84f8-4617-b271-b1046a6b6f16)
+![Screenshot 2024-11-20 164402](https://github.com/user-attachments/assets/70476884-2246-48b3-b66f-ae9c1f45f054)
+![Screenshot 2024-11-20 163456](https://github.com/user-attachments/assets/15e4c820-0967-47c6-b6c8-407dc0fcd272)
+![Screenshot 2024-11-20 163420](https://github.com/user-attachments/assets/671446bf-118e-436a-8daa-03bf4cece436)
 
