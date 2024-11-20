@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+	<title>Employee Directory</title>
+</head>
+
+<body>
+<div class="container">
+	<h3>Employee Directory</h3>
+
+	<div sec:authorize="hasRole('MANAGER')">
+		<a th:href="@{/employees/showFormForAdd}" class="btn btn-primary mb-3">Add Employee</a>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<div sec:authorize="hasRole('MANAGER')">
+			<th>Actions</th>
+			<th>Assignment</th>
+			<th>Assigned Task</th>
+			</div>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="employee : ${employees}">
+			<td th:text="${employee.firstName}"></td>
+			<td th:text="${employee.lastName}"></td>
+			<td th:text="${employee.email}"></td>
+			<div sec:authorize="hasRole('MANAGER')">
+
+			<td>
+
+					<a th:href="@{/employees/showFormForUpdate(employeeId=${employee.id})}" class="btn btn-info">Update</a>
+
+
+				<div sec:authorize="hasRole('ADMIN')">
+					<a th:href="@{/employees/delete(employeeId=${employee.id})}" class="btn btn-danger" onclick="if (!confirm('Are you sure?')) return false;">Delete</a>
+				</div>
+			</td>
+
+			<td>
+
+					<a th:href="@{/employees/showFormForAddTask(employeeId=${employee.id})}" class="btn btn-info">Assign Task</a>
+
+					<a th:href="@{/employees/deleteTask(employeeId=${employee.id})}" class="btn btn-danger" onclick="if (!confirm('Are you sure?')) return false;">Delete</a>
+
+			</td>
+
+			<td>
+				<span th:each="t:${tasks}"
+				th:if="${t.employeeId==employee.id}"
+				th:text	="'*'+${t.id}+' '+${t.task}+' ' ">
+				</span>
+
+			</td>
+			</div>
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<form th:action="@{/logout}" method="POST">
+	<input type="submit" value="Logout" class="btn btn-outline-primary mt-2">
+</form>
+
+</body>
+</html>
